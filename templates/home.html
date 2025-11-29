@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        {% for post in object_list%}
+            <div>
+                <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+                <h4>Muallif: {{ post.author }}</h4>
+                <p> {{ post.body | slice:":20" }}</p>
+            </div>
+<br>
+
+        {% endfor %}
+
+    {% endblock content %}
